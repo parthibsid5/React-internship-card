@@ -1,21 +1,24 @@
 import React from 'react';
-import './BasketballPlayerCard.css';
+import ReactDOM from 'react-dom';
+import BasketballPlayerCard from './BasketballPlayerCard';
 
-const BasketballPlayerCard = ({ name, image, position, stats }) => {
-  return (
-      <div className="card">
-            <img src={image} alt={`${name}`} className="player-image" />
-                  <div className="card-content">
-                          <h2 className="player-name">{name}</h2>
-                                  <p className="pnilayer-position">{position}</p>
-                                          <div className="player-stats">
-                                                    <p><strong>Points Per Game:</strong> {stats.pointsPerGame}</p>
-                                                              <p><strong>Assists Per Game:</strong> {stats.assistsPerGame}</p>
-                                                                        <p><strong>Rebounds Per Game:</strong> {stats.reboundsPerGame}</p>
-                                                                                </div>
-                                                                                      </div>
-                                                                                          </div>
-                                                                                            );
-                                                                                            };
+const player = {
+  name: "Amjyot Singh",
+  image: "images.jpeg",
+  position: "Forward",
+  stats: {
+    pointsPerGame: 25.4,
+    assistsPerGame: 7.1,
+    reboundsPerGame: 10.5,
+  }
+};
 
-                                                                                            export default BasketballPlayerCae nd;
+ReactDOM.render(
+  <BasketballPlayerCard
+    name={player.name}
+    image={player.image}
+    position={player.position}
+    stats={player.stats}
+  />,
+  document.getElementById('root')
+);
